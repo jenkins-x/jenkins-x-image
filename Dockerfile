@@ -1,4 +1,4 @@
-FROM jenkinsci/jenkins:2.89
+FROM jenkinsci/jenkins:2.89.2
 
 USER root
 RUN apt-get update && apt-get install -y vim
