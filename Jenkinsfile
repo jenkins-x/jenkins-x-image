@@ -26,8 +26,11 @@ pipeline {
             }
             steps {
                 container('jx-base') {
-                    // until kubernetes plugin supports init containers https://github.com/jenkinsci/kubernetes-plugin/pull/229/
-                    sh 'cp /root/netrc/.netrc ~/.netrc'
+                    // ensure we're not on a detached head
+                    sh "git checkout master"
+
+                    // until we switch to the new kubernetes / jenkins credential implementation use git credentials store
+                    sh "git config credential.helper store"
 
                     // so we can retrieve the version in later steps
                     sh "echo \$(jx-release-version) > VERSION"
