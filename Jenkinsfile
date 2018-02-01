@@ -4,7 +4,7 @@ pipeline {
     }
     environment {
         GH_CREDS = credentials('jenkins-x-github')
-        ORG         = 'rawlingsj'
+        ORG         = 'jenkinsxio'
         APP_NAME    = 'jenkinsx'
     }
     stages {
