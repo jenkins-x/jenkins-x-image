@@ -66,6 +66,7 @@ pipeline-stage-tags-metadata:1.2.6
 pipeline-stage-view:2.9
 plain-credentials:1.4
 pubsub-light:1.12
+resource-disposer:0.3
 scm-api:2.2.6
 script-security:1.40
 sse-gateway:1.15
@@ -84,3 +85,4 @@ workflow-multibranch:2.16
 workflow-scm-step:2.6
 workflow-step-api:2.14
 workflow-support:2.16
+ws-cleanup:0.34
