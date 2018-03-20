@@ -37,6 +37,7 @@ favorite:2.3.1
 git-client:2.7.1
 git-server:1.7
 git:3.8.0
+gitea:1.0.5
 github-api:1.90
 github-branch-source:2.3.2
 github:1.29.0
