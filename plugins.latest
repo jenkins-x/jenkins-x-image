@@ -36,6 +36,7 @@ favorite:latest
 git:latest
 git-client:latest
 git-server:latest
+gitea:latest
 github:latest
 github-api:latest
 github-branch-source:latest
