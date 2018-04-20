@@ -79,6 +79,7 @@ script-security:1.42
 sse-gateway:1.15
 ssh-credentials:1.13
 structs:1.14
+support-core:2.107
 token-macro:2.3
 variant:1.1
 workflow-aggregator:2.5
