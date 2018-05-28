@@ -28,7 +28,7 @@ cloudbees-bitbucket-branch-source:2.2.10
 cloudbees-folder:6.3
 command-launcher:1.2
 configuration-as-code:0.3-alpha
-credentials-binding:1.15
+credentials-binding:1.16
 credentials:2.1.16
 display-url-api:2.2.0
 docker-commons:1.11
