@@ -1,5 +1,7 @@
 import hudson.slaves.EnvironmentVariablesNodeProperty
 import hudson.EnvVars
+import jenkins.model.Jenkins
+
 def KEY = "DOCKER_REGISTRY"
 def HOST_ENV = "JENKINS_X_DOCKER_REGISTRY_SERVICE_HOST"
 def PORT_ENV = "JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT"
