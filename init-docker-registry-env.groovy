@@ -1,6 +1,6 @@
 import hudson.slaves.EnvironmentVariablesNodeProperty
 import hudson.EnvVars
-//import jenkins.model.Jenkins
+import jenkins.model.*;
 
 def KEY = "DOCKER_REGISTRY"
 def HOST_ENV = "JENKINS_X_DOCKER_REGISTRY_SERVICE_HOST"
