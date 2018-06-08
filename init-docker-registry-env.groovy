@@ -16,6 +16,6 @@ if (envVars.get(KEY) == null || envVars.get(KEY).length() == 0) {
   } else {
     def value = host + ":" + port
     println "Adding docker registry ${KEY} = ${value}"
-    envVars.put(KEY, env)
+    envVars.put(KEY, value)
   }  
 }
