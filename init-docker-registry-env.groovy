@@ -5,7 +5,7 @@ import jenkins.model.*;
 def KEY = "DOCKER_REGISTRY"
 def HOST_ENV = "JENKINS_X_DOCKER_REGISTRY_SERVICE_HOST"
 def PORT_ENV = "JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT"
-def globals = Jenkins.get().getGlobalNodeProperties().get(EnvironmentVariablesNodeProperty.class)
+def globals = Jenkins.instance.getGlobalNodeProperties().get(EnvironmentVariablesNodeProperty.class)
 def envVars = globals.getEnvVars();
 if (envVars.get(KEY) == null || envVars.get(KEY).length() == 0) {
   // is there a system environment
