@@ -40,6 +40,7 @@ gitea:latest
 github:latest
 github-api:latest
 github-branch-source:latest
+greenballs:latest
 handlebars:latest
 htmlpublisher:latest
 jackson2-api:latest
