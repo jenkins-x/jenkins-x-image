@@ -16,12 +16,16 @@ if (globals == null) {
 def envVars = globals.getEnvVars();
 if (envVars.get(KEY) == null || envVars.get(KEY).length() == 0) {
   // is there a system environment
+  def value = System.getenv(KEY);
+  if (value == null || value.isEmpty()) {
   def host = System.getenv(HOST_ENV);
   def port = System.getenv(PORT_ENV);
   if (host == null || port == null) {
       println "Warning missing host/port environment variables ${HOST_ENV} =${host}, ${PORT_ENV} = ${port}"
   } else {
-    def value = host + ":" + port
+      value = host + ":" + port
+  }
+  if (value != null && !value.isEmpty()) {
     println "Adding docker registry ${KEY} = ${value}"
     envVars.put(KEY, value)
   }  
