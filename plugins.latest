@@ -1,5 +1,6 @@
 ace-editor:latest
 apache-httpcomponents-client-4-api:latest
+artifactory:latest
 authentication-tokens:latest
 blueocean:latest
 blueocean-autofavorite:latest
