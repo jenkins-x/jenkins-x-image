@@ -42,7 +42,7 @@ gitea:1.0.8
 github-api:1.92
 github-branch-source:2.3.6
 github:1.29.1
-gitlab-plugin:1.5.5
+gitlab-plugin:1.5.9
 handlebars:1.1.1
 handy-uri-templates-2-api:2.1.6-1.0
 htmlpublisher:1.16
