@@ -74,7 +74,7 @@ pipeline-stage-tags-metadata:1.2.9
 pipeline-stage-view:2.10
 plain-credentials:1.4
 pubsub-light:1.12
-resource-disposer:0.8
+resource-disposer:0.12
 scm-api:2.2.7
 script-security:1.44
 sse-gateway:1.15
