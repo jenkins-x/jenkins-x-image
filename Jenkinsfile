@@ -25,6 +25,7 @@ pipeline {
             }
             steps {
                 container('jx-base') {
+                    sh "jx step git credentials"
                     sh "./jx/scripts/release.sh"
                 }
             }
