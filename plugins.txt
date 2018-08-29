@@ -29,7 +29,7 @@ cloudbees-folder:6.5.1
 command-launcher:1.2
 configuration-as-code:1.0-rc2
 credentials-binding:1.16
-credentials:2.1.19
+credentials:2.1.18
 display-url-api:2.2.0
 docker-commons:1.13
 docker-workflow:1.17
