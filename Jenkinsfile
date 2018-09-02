@@ -3,7 +3,6 @@ pipeline {
         label "jenkins-jx-base"
     }
     environment {
-        GH_CREDS = credentials('jenkins-x-github')
         ORG         = 'jenkinsxio'
         APP_NAME    = 'jenkinsx'
     }
@@ -26,21 +25,8 @@ pipeline {
             }
             steps {
                 container('jx-base') {
-                    // ensure we're not on a detached head
-                    sh "git checkout master"
-
-                    // until we switch to the new kubernetes / jenkins credential implementation use git credentials store
-                    sh "git config credential.helper store"
-
-                    // so we can retrieve the version in later steps
-                    sh "echo \$(jx-release-version) > VERSION"
-                    sh "git add VERSION"
-                    sh "git commit -m \"release \$(cat VERSION)\""
-                    sh "git tag -fa v\$(cat VERSION) -m \"Release version \$(cat VERSION)\""
-                    sh "git push origin v\$(cat VERSION)"
-
-                    sh "docker build --no-cache -t docker.io/$ORG/$APP_NAME:\$(cat VERSION) ."
-                    sh "docker push docker.io/$ORG/$APP_NAME:\$(cat VERSION)"
+                    sh "jx step git credentials"
+                    sh "./jx/scripts/release.sh"
                 }
             }
         }
