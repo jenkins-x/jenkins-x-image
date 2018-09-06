@@ -52,7 +52,7 @@ jira:3.0.1
 jquery-detached:1.2.1
 jsch:0.1.54.2
 junit:1.24
-jx-resources:1.0.6
+jx-resources:1.0.14
 kubernetes-credentials:0.3.1
 kubernetes-credentials-provider:0.9
 kubernetes:1.12.4
