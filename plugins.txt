@@ -49,10 +49,10 @@ handy-uri-templates-2-api:2.1.6-1.0
 htmlpublisher:1.16
 jackson2-api:2.8.11.3
 jenkins-design-language:1.8.3
-jira:3.0.1
+jira:3.0.2
 jquery-detached:1.2.1
 jsch:0.1.54.2
-junit:1.25
+junit:1.26.1
 jx-resources:1.0.14
 kubernetes-credentials:0.3.1
 kubernetes-credentials-provider:0.10
