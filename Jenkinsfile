@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label "jenkins-jx-base"
-    }
+    agent any
     environment {
         ORG         = 'jenkinsxio'
         APP_NAME    = 'jenkinsx'
@@ -12,10 +10,8 @@ pipeline {
                 branch 'PR-*'
             }
             steps {
-                container('jx-base') {
-                    sh "docker build --no-cache -t docker.io/$ORG/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER ."
-                    sh "docker push docker.io/$ORG/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
-                }
+                sh "docker build --no-cache -t docker.io/$ORG/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER ."
+                sh "docker push docker.io/$ORG/$APP_NAME:SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
             }
         }
     
@@ -24,10 +20,9 @@ pipeline {
                 branch 'master'
             }
             steps {
-                container('jx-base') {
-                    sh "jx step git credentials"
-                    sh "./jx/scripts/release.sh"
-                }
+                git "https://github.com/jenkins-x/jenkins-x-image"
+                sh "jx step git credentials"
+                sh "./jx/scripts/release.sh"
             }
         }
     }
