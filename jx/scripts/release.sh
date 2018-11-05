@@ -20,4 +20,3 @@ git push origin v${VERSION}
 
 updatebot push-version --kind helm $ORG/$APP_NAME ${VERSION}
 updatebot push-version --kind docker $ORG/$APP_NAME ${VERSION}
-updatebot update-loop
