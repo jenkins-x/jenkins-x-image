@@ -96,3 +96,4 @@ workflow-scm-step:2.6
 workflow-step-api:2.16
 workflow-support:2.20
 ws-cleanup:0.34
+localization-zh-cn:0.0.11
