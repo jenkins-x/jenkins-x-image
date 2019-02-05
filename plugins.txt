@@ -57,7 +57,6 @@ jsch:0.1.55
 junit:1.26.1
 jx-resources:1.0.27
 kubernetes-credentials:0.4.0
-kubernetes-credentials-provider:0.10
 kubernetes:1.14.3
 mailer:1.23
 matrix-project:1.13
