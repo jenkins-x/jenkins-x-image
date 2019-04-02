@@ -104,3 +104,4 @@ ivy:1.28
 javadoc:1.4
 metrics:4.0.2.2
 lockable-resources:2.3
+localization-zh-cn:0.0.11
