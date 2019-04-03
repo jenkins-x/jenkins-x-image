@@ -44,7 +44,7 @@ pipelineConfig:
             args:
               - --dockerfile=Dockerfile
               - --destination=docker.io/jenkinsxio/jenkinsx:${inputs.params.version}
-              - --context=/workspace/workspace
+              - --context=/workspace/source
               - --cache-repo=gcr.io/jenkinsxio/cache-jenkins
               - --cache=true
               - --cache-dir=/workspace
@@ -91,7 +91,7 @@ pipelineConfig:
             args:
               - --dockerfile=Dockerfile
               - --destination=docker.io/jenkinsxio/jenkinsx:${inputs.params.version}
-              - --context=/workspace/workspace
+              - --context=/workspace/source
               - --cache-repo=gcr.io/jenkinsxio/cache-jenkins
               - --cache=true
               - --cache-dir=/workspace
