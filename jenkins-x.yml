@@ -36,7 +36,7 @@ pipelineConfig:
             image: gcr.io/kaniko-project/warmer
             args:
               - --cache-dir=/workspace
-              - --image=jenkins/jenkins:2.150.3-slim
+              - --image=jenkins/jenkins:2.164.2-slim
             command: /kaniko/warmer
 
           - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
@@ -83,7 +83,7 @@ pipelineConfig:
             image: gcr.io/kaniko-project/warmer
             args:
               - --cache-dir=/workspace
-              - --image=jenkins/jenkins:2.150.3-slim
+              - --image=jenkins/jenkins:2.164.2-slim
             command: /kaniko/warmer
 
           - image: gcr.io/kaniko-project/executor:9912ccbf8d22bbafbf971124600fbb0b13b9cbd6
