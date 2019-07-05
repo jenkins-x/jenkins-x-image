@@ -25,10 +25,10 @@ ${JX} step git credentials
 
 gcloud auth activate-service-account --key-file $GKE_SA
 
-sed -e s/\$VERSION/${VERSION_PREFIX}${VERSION}/g -e s/\$CODECOV_TOKEN/${CODECOV_TOKEN}/g myvalues.yaml.tekton.template > myvalues.yaml
+sed -e s/\$VERSION/${VERSION_PREFIX}${VERSION}/g myvalues.yaml.static.template > myvalues.yaml
 
 #echo the myvalues.yaml file is:
-#cat myvalues.yaml
+cat myvalues.yaml
 
 # lets setup git
 git config --global --add user.name JenkinsXBot
