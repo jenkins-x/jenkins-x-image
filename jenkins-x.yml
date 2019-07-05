@@ -49,10 +49,13 @@ pipelineConfig:
               - --cache=true
               - --cache-dir=/workspace
 
-          - image: jenkinsxio/builder-base:0.1.274
+          - image: gcr.io/jenkinsxio/builder-jx
             command: ./updatebot.sh
             args:
               - ${inputs.params.version}
+          - name: changelog
+            image: gcr.io/jenkinsxio/builder-go
+            command: ./jx/scripts/changelog.sh
 
     pullRequest:
       pipeline:
@@ -97,5 +100,5 @@ pipelineConfig:
               - --cache-dir=/workspace
 
           - name: static-e2e-tests
-            image: gcr.io/jenkinsxio/builder-go:0.1.537
+            image: gcr.io/jenkinsxio/builder-go
             command: ./jx/bdd/static/ci.sh
