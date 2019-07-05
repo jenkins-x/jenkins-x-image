@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.164.3-slim
+FROM jenkins/jenkins:2.176.1-slim
 
 USER root
 RUN apt-get update && apt-get install -y vim
