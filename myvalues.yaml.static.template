@@ -1,0 +1,3 @@
+jenkins:
+  Master:
+    ImageTag: $VERSION
