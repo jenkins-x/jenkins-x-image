@@ -49,10 +49,11 @@ pipelineConfig:
               - --cache=true
               - --cache-dir=/workspace
 
-          - image: gcr.io/jenkinsxio/builder-jx
+          - image: gcr.io/jenkinsxio/builder-go
             command: ./updatebot.sh
             args:
               - ${inputs.params.version}
+
           - name: changelog
             image: gcr.io/jenkinsxio/builder-go
             command: ./jx/scripts/changelog.sh
