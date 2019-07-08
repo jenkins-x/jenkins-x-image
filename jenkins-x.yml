@@ -49,7 +49,7 @@ pipelineConfig:
               - --cache=true
               - --cache-dir=/workspace
 
-          - image: gcr.io/jenkinsxio/builder-go
+          - image: gcr.io/jenkinsxio/builder-maven
             command: ./updatebot.sh
             args:
               - ${inputs.params.version}
