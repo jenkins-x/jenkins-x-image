@@ -49,14 +49,14 @@ pipelineConfig:
               - --cache=true
               - --cache-dir=/workspace
 
+          - name: changelog
+            image: gcr.io/jenkinsxio/builder-go
+            command: ./jx/scripts/changelog.sh
+
           - image: gcr.io/jenkinsxio/builder-maven
             command: ./updatebot.sh
             args:
               - ${inputs.params.version}
-
-          - name: changelog
-            image: gcr.io/jenkinsxio/builder-go
-            command: ./jx/scripts/changelog.sh
 
     pullRequest:
       pipeline:
