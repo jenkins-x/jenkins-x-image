@@ -50,10 +50,10 @@ pipelineConfig:
               - --cache-dir=/workspace
 
           - name: changelog
-            image: gcr.io/jenkinsxio/builder-go
+            image: gcr.io/jenkinsxio/builder-go:0.1.550
             command: ./jx/scripts/changelog.sh
 
-          - image: gcr.io/jenkinsxio/builder-maven
+          - image: gcr.io/jenkinsxio/builder-maven:0.1.550
             command: ./updatebot.sh
             args:
               - ${inputs.params.version}
