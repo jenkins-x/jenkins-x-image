@@ -4,6 +4,6 @@ VERSION=$1
 ORG=jenkinsxio
 APP_NAME=jenkinsx
 
-updatebot push-version --kind helm $ORG/$APP_NAME ${VERSION}
-updatebot push-version --kind docker $ORG/$APP_NAME ${VERSION}
-updatebot push-regex -r "\s+ImageTag: \"(.*)\"" -v ${VERSION} --previous-line "\s+Image: \"jenkinsxio/jenkinsx\"" values.yaml
+jx step create pr chart --name $ORG/$APP_NAME --version ${VERSION} --repo https://github.com/jenkins-x/jenkins-x-platform.git
+jx step create pr docker --name $ORG/$APP_NAME --version ${VERSION} --repo https://github.com/jenkins-x/jenkins-x-platform.git
+jx step create pr regex --regex "^(?m)\s+Image: \"jenkinsxio\/jenkinsx\"\s+ImageTag: \"(.*)\"$" --version ${VERSION} --files values.yaml --repo https://github.com/jenkins-x/jenkins-x-platform.git
