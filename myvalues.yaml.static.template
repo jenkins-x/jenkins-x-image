@@ -1,3 +1,4 @@
 jenkins:
   Master:
     ImageTag: $VERSION
+    Image: "gcr.io/jenkinsxio/jenkinsx"
