@@ -44,6 +44,7 @@ pipelineConfig:
             args:
               - --dockerfile=Dockerfile
               - --destination=gcr.io/jenkinsxio/jenkinsx:${inputs.params.version}
+              - --destination=gcr.io/jenkinsxio/jenkinsx:latest
               - --context=/workspace/source
               - --cache-repo=gcr.io/jenkinsxio/cache-jenkins
               - --cache=true
