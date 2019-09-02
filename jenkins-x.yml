@@ -20,7 +20,7 @@ pipelineConfig:
             value: /builder/home/kaniko-secret.json
           steps:
 
-          - image: jenkinsxio/jx:1.3.963 
+          - image: gcr.io/jenkinsxio/builder-go:0.1.696
             command: jx
             args:
               - step
@@ -50,10 +50,10 @@ pipelineConfig:
               - --cache-dir=/workspace
 
           - name: changelog
-            image: gcr.io/jenkinsxio/builder-go:0.1.550
+            image: gcr.io/jenkinsxio/builder-go:0.1.696
             command: ./jx/scripts/changelog.sh
 
-          - image: gcr.io/jenkinsxio/builder-maven:0.1.550
+          - image: gcr.io/jenkinsxio/builder-maven:0.1.696
             command: ./updatebot.sh
             args:
               - ${inputs.params.version}
@@ -71,7 +71,7 @@ pipelineConfig:
             value: /builder/home/kaniko-secret.json
           steps:
  
-          - image: jenkinsxio/jx:1.3.963 
+          - image: gcr.io/jenkinsxio/builder-go:0.1.696
             command: jx
             args:
               - step 
@@ -101,5 +101,5 @@ pipelineConfig:
               - --cache-dir=/workspace
 
           - name: static-e2e-tests
-            image: gcr.io/jenkinsxio/builder-go:0.1.537
+            image: gcr.io/jenkinsxio/builder-go:0.1.696
             command: ./jx/bdd/static/ci.sh
