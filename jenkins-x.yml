@@ -65,11 +65,33 @@ pipelineConfig:
           image: gcr.io/kaniko-project
         stages:
         - name: build-and-push
+          options:
+            volumes:
+            - name: sa
+              secret:
+                secretName: bdd-secret
+                items:
+                - key: bdd-credentials.json
+                  path: bdd/sa.json
+            containerOptions:
+              volumeMounts:
+              - mountPath: /secrets
+                name: sa
           environment:
           - name: GKE_SA
-            value: /builder/home/jenkinsx-dev-07b8e95876b1.json
+            value: /secrets/bdd/sa.json
           - name: GOOGLE_APPLICATION_CREDENTIALS
             value: /builder/home/kaniko-secret.json
+          - name: GH_ACCESS_TOKEN 
+            valueFrom:
+              secretKeyRef:
+                name: jenkins-x-bot-test-github
+                key: password
+          - name: JENKINS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: test-jenkins-user 
+                key: password
           steps:
  
           - image: gcr.io/jenkinsxio/builder-go:0.1.696
